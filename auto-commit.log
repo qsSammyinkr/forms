@@ -266,22 +266,20 @@ Your branch is ahead of 'origin/main' by 2 commits.
 
 nothing to commit, working tree clean
 No changes to commit
-local commits)
-
-nothing to commit, working tree clean
-No changes to commit
 remote: This repository moved. Please use the new location:        
 remote:   https://github.com/qsSammyinkr/forms.git        
 To https://github.com/qsssSammyinkr/forms
-   0bdec31..163d30f  main -> main
-[main 163d30f] Auto update 2025-10-30 16:38:06
+   163d30f..f1a7e40  main -> main
+[main f1a7e40] Auto update 2025-10-30 16:38:09
  Author: qsssSammyinkr <hafbdjjt@gmail.com>
  1 file changed, 12 insertions(+), 3 deletions(-)
 Everything up-to-date
-[main 8346d55] Auto update 2025-10-30 16:38:06
+[main d877e8c] Auto commit: 2025-10-30 16:38:08
  Author: qsssSammyinkr <hafbdjjt@gmail.com>
- 1 file changed, 19 insertions(+), 7 deletions(-)
+ 2 files changed, 23 insertions(+), 1 deletion(-)
 Everything up-to-date
+✅ Auto commit: 2025-10-30 16:38:08 — enviado para o GitHub!
+p-to-date
 [main 92555bd] 🪄 Auto commit: 2025-10-30 16:38:06
  Author: qsssSammyinkr <hafbdjjt@gmail.com>
  2 files changed, 37 insertions(+), 4 deletions(-)
@@ -289,3 +287,17 @@ Everything up-to-date
 ✅ Commit & push feitos com sucesso em 16:38:08
 ------------------------------------------
 🔧 Alterações detectadas em 16:38:09
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+No changes to commit
+remote: This repository moved. Please use the new location:        
+remote:   https://github.com/qsSammyinkr/forms.git        
+To https://github.com/qsssSammyinkr/forms
+ ! [remote rejected] main -> main (cannot lock ref 'refs/heads/main': is at 8ab7924e58113be556f10fe883b896ac79720818 but expected 163d30f46ddc7add09dbfa237fa66746412a9b65)
+error: failed to push some refs to 'https://github.com/qsssSammyinkr/forms'
+[main 8ab7924] 🪄 Auto commit: 2025-10-30 16:38:09
+ Author: qsssSammyinkr <hafbdjjt@gmail.com>
+ 1 file changed, 18 insertions(+), 6 deletions(-)
