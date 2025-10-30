@@ -2,17 +2,18 @@
 // Configuração Supabase
 // ----------------------
 const supabaseUrl = 'https://qkbknjelwntrhhvqeuko.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFrYmtuamVsd250cmhodnFldWtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4NDQyMDksImV4cCI6MjA3NzQyMDIwOX0.hiGQJp50YPW4_HnU8w91i2HSzTlk5wUVMlV7uOlWnQw';
+const supabaseKey = 'SUA_ANON_PUBLIC_KEY'; // troque pela real anon key
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 // ----------------------
 // URLs públicas do Codespace
 // ----------------------
-INDEX_URL → /index.html
-REGISTER_URL → /src/html/register.html
-FORGOT_URL → /src/html/forget_password.html
-RESET_URL → /src/html/reset_password.html
-DASHBOARD_URL → /src/admin/dashboard.html
+const INDEX_URL = '/index.html';
+const REGISTER_URL = '/src/html/register.html';
+const FORGOT_URL = '/src/html/forget_password.html';
+const RESET_URL = '/src/html/reset_password.html';
+const DASHBOARD_URL = '/src/admin/dashboard.html';
+
 // ----------------------
 // REGISTER
 // ----------------------
@@ -24,23 +25,14 @@ if (registerForm) {
     const password = registerForm.password.value;
     const role = registerForm.role.value;
 
-    // 1️⃣ Criar usuário no Auth
     const { data: authData, error: authError } = await supabaseClient.auth.signUp({ email, password });
+    if (authError) return alert('❌ ' + authError.message);
 
-    if (authError) {
-      alert('❌ ' + authError.message);
-      return;
-    }
-
-    // 2️⃣ Criar perfil na tabela profiles
-    const { data: profileData, error: profileError } = await supabaseClient
+    const { error: profileError } = await supabaseClient
       .from('profiles')
-      .insert([{ id: authData.user.id, email: email, role: role }]);
+      .insert([{ id: authData.user.id, email, role }]);
 
-    if (profileError) {
-      alert('❌ Erro ao criar perfil: ' + profileError.message);
-      return;
-    }
+    if (profileError) return alert('❌ Erro ao criar perfil: ' + profileError.message);
 
     alert('✅ Registration successful! Check your email to verify.');
     window.location.href = INDEX_URL;
@@ -62,18 +54,12 @@ if (loginForm) {
     e.preventDefault();
     const email = loginForm.email.value;
     const password = loginForm.password.value;
-    const remember = loginForm.remember ? loginForm.remember.checked : false;
+    const remember = loginForm.remember?.checked;
 
-    const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+    const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+    if (error) return alert('❌ ' + error.message);
 
-    if (error) {
-      alert('❌ ' + error.message);
-      return;
-    }
-
-    if (remember) localStorage.setItem('rememberedEmail', email);
-    else localStorage.removeItem('rememberedEmail');
-
+    remember ? localStorage.setItem('rememberedEmail', email) : localStorage.removeItem('rememberedEmail');
     alert('💖 Login successful!');
     window.location.href = DASHBOARD_URL;
   });
@@ -88,7 +74,7 @@ if (forgotForm) {
     e.preventDefault();
     const email = forgotForm.email.value;
 
-    const { data, error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+    const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
       redirectTo: RESET_URL,
     });
 
@@ -106,7 +92,7 @@ if (resetForm) {
     e.preventDefault();
     const newPassword = document.getElementById('newPassword').value;
 
-    const { data, error } = await supabaseClient.auth.updateUser({ password: newPassword });
+    const { error } = await supabaseClient.auth.updateUser({ password: newPassword });
 
     if (error) alert('❌ ' + error.message);
     else {
