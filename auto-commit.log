@@ -320,20 +320,19 @@ Your branch is ahead of 'origin/main' by 3 commits.
 
 nothing to commit, working tree clean
 No changes to commit
-818)
-error: failed to push some refs to 'https://github.com/qsssSammyinkr/forms'
-[main b459dec] 🪄 Auto commit: 2025-10-30 16:38:11
+remote: This repository moved. Please use the new location:        
+remote:   https://github.com/qsSammyinkr/forms.git        
+To https://github.com/qsssSammyinkr/forms
+   28ce36b..5190386  main -> main
+[main 5190386] Auto update 2025-10-30 16:38:21
  Author: qsssSammyinkr <hafbdjjt@gmail.com>
- 2 files changed, 13 insertions(+), 1 deletion(-)
+ 1 file changed, 23 insertions(+), 6 deletions(-)
 Everything up-to-date
-✅ Commit & push feitos com sucesso em 16:38:13
-------------------------------------------
-🔧 Alterações detectadas em 16:38:13
-On branch main
-Your branch is ahead of 'origin/main' by 3 commits.
-  (use "git push" to publish your local commits)
-
-nothing to commit, working tree clean
+[main 30a826c] Auto update 2025-10-30 16:38:21
+ Author: qsssSammyinkr <hafbdjjt@gmail.com>
+ 1 file changed, 34 insertions(+), 8 deletions(-)
+Everything up-to-date
+ee clean
 No changes to commit
 remote: This repository moved. Please use the new location:        
 remote:   https://github.com/qsSammyinkr/forms.git        
@@ -389,3 +388,21 @@ Everything up-to-date
 ✅ Commit & push feitos com sucesso em 16:38:21
 ------------------------------------------
 🔧 Alterações detectadas em 16:38:21
+On branch main
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+No changes to commit
+remote: This repository moved. Please use the new location:        
+remote:   https://github.com/qsSammyinkr/forms.git        
+To https://github.com/qsssSammyinkr/forms
+ ! [remote rejected] main -> main (cannot lock ref 'refs/heads/main': is at c0b96bf35aec6e24c7708cfbeecbb8dd54de030a but expected 28ce36b448c11c768fdce519e22cb85553ddc23c)
+error: failed to push some refs to 'https://github.com/qsssSammyinkr/forms'
+[main c0b96bf] 🪄 Auto commit: 2025-10-30 16:38:21
+ Author: qsssSammyinkr <hafbdjjt@gmail.com>
+ 1 file changed, 25 insertions(+), 9 deletions(-)
+Everything up-to-date
+✅ Commit & push feitos com sucesso em 16:38:22
+------------------------------------------
+🔧 Alterações detectadas em 16:38:23
