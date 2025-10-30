@@ -143,3 +143,17 @@ an editor opened by 'git commit'. Please make sure all processes
 are terminated then try again. If it still fails, a git process
 may have crashed in this repository earlier:
 remove the file manually to continue.
+fatal: cannot lock ref 'HEAD': is at 1ddc6643f1c007f62a27fac849715c766f1fbe44 but expected 7890233134903288c83253e1f0b66f778c278269
+remote: This repository moved. Please use the new location:        
+remote:   https://github.com/qsSammyinkr/forms.git        
+To https://github.com/qsssSammyinkr/forms
+ ! [remote rejected] main -> main (cannot lock ref 'refs/heads/main': is at 1ddc6643f1c007f62a27fac849715c766f1fbe44 but expected 7890233134903288c83253e1f0b66f778c278269)
+error: failed to push some refs to 'https://github.com/qsssSammyinkr/forms'
+✅ Auto commit: 2025-10-30 16:36:42 — enviado para o GitHub!
+fatal: Unable to create '/workspaces/forms/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
