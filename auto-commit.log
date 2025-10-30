@@ -367,3 +367,13 @@ To https://github.com/qsssSammyinkr/forms
 ✅ Commit & push feitos com sucesso em 16:38:19
 ------------------------------------------
 🔧 Alterações detectadas em 16:38:19
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+No changes to commit
+remote: This repository moved. Please use the new location:        
+remote:   https://github.com/qsSammyinkr/forms.git        
+To https://github.com/qsssSammyinkr/forms
+   3eb27d1..28ce36b  main -> main
