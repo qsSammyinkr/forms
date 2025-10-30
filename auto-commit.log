@@ -343,22 +343,20 @@ Your branch is ahead of 'origin/main' by 4 commits.
 
 nothing to commit, working tree clean
 No changes to commit
- 'https://github.com/qsssSammyinkr/forms'
-[main 448d744] 🪄 Auto commit: 2025-10-30 16:38:13
- Author: qsssSammyinkr <hafbdjjt@gmail.com>
- 1 file changed, 20 insertions(+), 9 deletions(-)
-Everything up-to-date
-✅ Commit & push feitos com sucesso em 16:38:14
-------------------------------------------
-🔧 Alterações detectadas em 16:38:15
-On branch main
-Your branch is ahead of 'origin/main' by 1 commit.
-  (use "git push" to publish your local commits)
-
-nothing to commit, working tree clean
-No changes to commit
 remote: This repository moved. Please use the new location:        
 remote:   https://github.com/qsSammyinkr/forms.git        
+To https://github.com/qsssSammyinkr/forms
+   3c55b48..c24d245  main -> main
+[main c24d245] Auto update 2025-10-30 16:38:26
+ Author: qsssSammyinkr <hafbdjjt@gmail.com>
+ 1 file changed, 24 insertions(+), 6 deletions(-)
+Everything up-to-date
+[main 466d5bd] Auto commit: 2025-10-30 16:38:25
+ Author: qsssSammyinkr <hafbdjjt@gmail.com>
+ 1 file changed, 34 insertions(+), 9 deletions(-)
+Everything up-to-date
+✅ Auto commit: 2025-10-30 16:38:25 — enviado para o GitHub!
+   https://github.com/qsSammyinkr/forms.git        
 To https://github.com/qsssSammyinkr/forms
    448d744..887a382  main -> main
 [main 887a382] 🪄 Auto commit: 2025-10-30 16:38:15
@@ -439,3 +437,21 @@ To https://github.com/qsssSammyinkr/forms
 ✅ Commit & push feitos com sucesso em 16:38:26
 ------------------------------------------
 🔧 Alterações detectadas em 16:38:26
+On branch main
+Your branch is ahead of 'origin/main' by 5 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+No changes to commit
+remote: This repository moved. Please use the new location:        
+remote:   https://github.com/qsSammyinkr/forms.git        
+To https://github.com/qsssSammyinkr/forms
+ ! [remote rejected] main -> main (cannot lock ref 'refs/heads/main': is at f7c896019a8f538a3130f40627528dfd86be4d78 but expected 3c55b48fe8fdcde55995a941d52b04c46ad0e649)
+error: failed to push some refs to 'https://github.com/qsssSammyinkr/forms'
+[main f7c8960] 🪄 Auto commit: 2025-10-30 16:38:26
+ Author: qsssSammyinkr <hafbdjjt@gmail.com>
+ 1 file changed, 24 insertions(+), 8 deletions(-)
+Everything up-to-date
+✅ Commit & push feitos com sucesso em 16:38:27
+------------------------------------------
+🔧 Alterações detectadas em 16:38:28
