@@ -1,63 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <!--MATERIAL ICONS-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!--STYLESHEET-->
-    <link rel="stylesheet" href="/src/styles/style_dashboard.css">
-
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff Dashboard</title>
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- STYLESHEET -->
+<link rel="stylesheet" href="style_dashboard.css">
 </head>
 <body>
-    <div class="container">
-        <aside>
-            <div class="top">
-                <div class="logo">
-                    <img src="/img/logo1.png">
-                    <h2>FORMS<span class="danger">STAFFS GUIDE</span></h2>
-                </div>
-                <div class="close" id="close-btn">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-            </div>
 
-            <div class="sidebar">
-                <a href="#">
-                    <i class="fa-solid fa-grip"></i>
-                    <h3>Dashboard</h3>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-42-group"></i>
-                    <h3>Info</h></h3>
-                </a>
-                <a href="#">
-                    <i class="fa-solid fa-book"></i>
-                    <h3>Rules</h3>
-                </a>
-                <a href="#">
-                    <i class="fa-solid fa-bug"></i>
-                    <h3>Reports</h3>
-                </a>
-                <a href="#">
-                    <i class="fa-solid fa-file"></i>
-                    <h3>Forms Staff</h3>
-                </a>
-                <a href="#">
-                    <i class="fa-solid fa-staff-snake"></i>
-                    <h3>News Staff</h3>
-                </a>
-                <a href="#">
-                    <i class="fa-solid fa-clipboard-user"></i>
-                    <h3>Mural of Shame</h3>
-                </a>
-                <a href="#">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <h3>Logout</h3>
-            </div>
-        </aside>
+<aside>
+    <div class="top">
+        <div class="logo">
+            <img src="/img/logo1.png">
+            <h2>FORMS<span class="danger">STAFFS GUIDE</span></h2>
+        </div>
     </div>
+
+    <div class="sidebar">
+        <a href="#"><i class="fa-solid fa-grip"></i><h3>Dashboard</h3></a>
+        <a href="#"><i class="fa-brands fa-42-group"></i><h3>Info</h3></a>
+        <a href="#"><i class="fa-solid fa-book"></i><h3>Rules</h3></a>
+        <a href="#"><i class="fa-solid fa-bug"></i><h3>Reports</h3></a>
+        <a href="#"><i class="fa-solid fa-file"></i><h3>Forms Staff</h3></a>
+        <a href="#"><i class="fa-solid fa-staff-snake"></i><h3>News Staff</h3></a>
+        <a href="#"><i class="fa-solid fa-clipboard-user"></i><h3>Mural of Shame</h3></a>
+        <a href="#"><i class="fa-solid fa-right-from-bracket"></i><h3>Logout</h3></a>
+    </div>
+</aside>
+
+<main>
+<h1>Staff Dashboard</h1>
+
+<!-- NOTIFICATIONS -->
+<div class="notification">🛎️ New report submitted by member #123</div>
+<div class="notification">⚠️ Staff meeting at 18:00</div>
+
+<!-- STATISTICS CARDS -->
+<div class="card-grid">
+    <div class="card">
+        <div class="title">Total Staff</div>
+        <div class="number">12</div>
+        <div class="badge green" id="status-staff">Active</div>
+        <canvas id="staffChart" height="100"></canvas>
+    </div>
+
+    <div class="card">
+        <div class="title">Reports Today</div>
+        <div class="number">5</div>
+        <div class="badge yellow" id="status-reports">Pending</div>
+        <canvas id="reportsChart" height="100"></canvas>
+    </div>
+
+    <div class="card">
+        <div class="title">Forms Processed</div>
+        <div class="number">27</div>
+        <div class="badge green" id="status-forms">Completed</div>
+        <canvas id="formsChart" height="100"></canvas>
+    </div>
+</div>
+
+<!-- STAFF RULES COLLAPSIBLE -->
+<button class="collapsible">Rule 1: Always act professionally <span class="badge green">Low</span> <i class="fa-solid fa-chevron-down"></i></button>
+<div class="content"><p>All staff must behave professionally. Avoid arguments or offensive language.</p></div>
+
+<button class="collapsible">Rule 2: Do not abuse permissions <span class="badge red">High</span> <i class="fa-solid fa-chevron-down"></i></button>
+<div class="content"><p>Staff must not misuse powers. Abuse results in removal.</p></div>
+
+<button class="collapsible">Rule 3: Keep reports confidential <span class="badge yellow">Medium</span> <i class="fa-solid fa-chevron-down"></i></button>
+<div class="content"><p>Incident reports and sensitive info must remain private among staff.</p></div>
+
+<button class="collapsible">Rule 4: Be active and responsive <span class="badge green">Low</span> <i class="fa-solid fa-chevron-down"></i></button>
+<div class="content"><p>Staff should be online and responsive during shifts.</p></div>
+
+<button class="collapsible">Rule 5: No favoritism <span class="badge red">High</span> <i class="fa-solid fa-chevron-down"></i></button>
+<div class="content"><p>Moderation actions should be fair. Avoid bias.</p></div>
+
+</main>
+
+<!-- CHART.JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/src/javascript/dashboard.js"></script>
 </body>
 </html>

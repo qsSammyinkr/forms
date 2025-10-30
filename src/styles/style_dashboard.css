@@ -1,187 +1,49 @@
-/* RESET BÁSICO */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-/* BODY */
-body {
-    background: #f0f2f5;
-    color: #333;
-    display: flex;
-}
-
-/* CONTAINER */
-.container {
-    display: flex;
-    width: 100%;
-}
+/* RESET & BODY */
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+body {display:flex; background:#f0f2f8; color:#333;}
 
 /* SIDEBAR */
-aside {
-    width: 250px;
-    height: 100vh;
-    background: linear-gradient(180deg, #1f1f2f, #2f2f41);
-    position: fixed;
-    left: 0;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: 20px;
-    transition: all 0.3s ease;
-    box-shadow: 5px 0 15px rgba(0,0,0,0.2);
-    border-right: 1px solid rgba(255,255,255,0.1);
-}
+aside {width:250px; height:100vh; background:linear-gradient(180deg,#1f1f2f,#2f2f41); position:fixed; top:0; left:0; display:flex; flex-direction:column; padding-bottom:20px; border-right:1px solid rgba(255,255,255,0.1); box-shadow:5px 0 15px rgba(0,0,0,0.2);}
+aside .top {display:flex; flex-direction:column; align-items:center; padding:20px 0;}
+aside .logo {display:flex; align-items:center; gap:10px;}
+aside .logo img {width:45px; height:45px; border-radius:8px; transition: transform 0.3s;}
+aside .logo img:hover {transform: rotate(15deg) scale(1.1);}
+aside .logo h2 {color:#fff; font-size:18px; font-weight:600;}
+aside .logo .danger {color:#ff6b81;}
+.sidebar {display:flex; flex-direction:column; margin-top:30px;}
+.sidebar a {display:flex; align-items:center; gap:15px; color:#dcdde1; padding:15px 20px; text-decoration:none; border-left:3px solid transparent; position:relative; overflow:hidden; transition:all 0.3s;}
+.sidebar a::before {content:''; position:absolute; left:0; top:0; width:0%; height:100%; background:#ff6b81; transition:0.3s; z-index:0;}
+.sidebar a:hover::before {width:100%;}
+.sidebar a:hover {color:#fff;}
+.sidebar a i {font-size:18px; z-index:1;}
+.sidebar a h3 {font-size:16px; z-index:1;}
 
-/* TOP LOGO */
-aside .top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-}
+/* MAIN */
+main {margin-left:250px; width:calc(100%-250px); padding:40px; transition:all 0.3s;}
+h1 {margin-bottom:25px;}
 
-aside .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+/* GRID CARDS */
+.card-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; margin-bottom:40px;}
+.card {background:#fff; border-radius:15px; padding:25px; box-shadow:0 8px 20px rgba(0,0,0,0.1); position:relative; overflow:hidden; transition: transform 0.3s, box-shadow 0.3s;}
+.card:hover {transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.2);}
+.card .title {font-size:14px; color:#888; margin-bottom:10px;}
+.card .number {font-size:28px; font-weight:700; color:#333;}
+.card .badge {position:absolute; top:20px; right:20px; padding:5px 10px; border-radius:12px; font-size:12px; font-weight:600; color:#fff;}
+.badge.green {background:#2ed573;}
+.badge.yellow {background:#ffcc00;}
+.badge.red {background:#ff4757;}
 
-aside .logo img {
-    width: 45px;
-    height: 45px;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
+/* COLLAPSIBLE RULES */
+.collapsible {background:#fff; color:#333; cursor:pointer; padding:18px 20px; width:100%; border:none; text-align:left; outline:none; font-size:16px; border-radius:12px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center; box-shadow:0 6px 15px rgba(0,0,0,0.1); transition:all 0.3s;}
+.collapsible:hover {transform:translateY(-3px); box-shadow:0 10px 20px rgba(0,0,0,0.15);}
+.collapsible i {transition: transform 0.3s;}
+.collapsible.active i {transform:rotate(180deg);}
+.content {padding:0 20px; max-height:0; overflow:hidden; transition:max-height 0.3s ease; background:#f8f9fc; border-radius:0 0 12px 12px; margin-bottom:10px;}
+.content p {padding:10px 0; color:#555;}
 
-aside .logo img:hover {
-    transform: rotate(15deg) scale(1.1);
-}
-
-aside .logo h2 {
-    color: #fff;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-aside .logo .danger {
-    color: #ff6b81;
-}
-
-/* LINKS SIDEBAR */
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-}
-
-.sidebar a {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color: #dcdde1;
-    padding: 15px 20px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border-left: 3px solid transparent;
-    position: relative;
-    overflow: hidden;
-}
-
-.sidebar a::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0%;
-    height: 100%;
-    background: #ff6b81;
-    transition: 0.3s;
-    z-index: 0;
-}
-
-.sidebar a:hover::before {
-    width: 100%;
-}
-
-.sidebar a:hover {
-    color: #fff;
-}
-
-.sidebar a i {
-    font-size: 18px;
-    z-index: 1;
-}
-
-.sidebar a h3 {
-    font-size: 16px;
-    z-index: 1;
-}
-
-/* CONTEÚDO PRINCIPAL */
-main {
-    margin-left: 250px;
-    padding: 40px;
-    width: calc(100% - 250px);
-    transition: all 0.3s ease;
-}
-
-/* CARDS BONITOS */
-.card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-}
-
-/* TITULOS E TEXTOS */
-h1, h2, h3 {
-    color: #333;
-}
-
-p {
-    color: #666;
-    line-height: 1.6;
-}
-
-/* BOTÃO */
-button {
-    padding: 10px 20px;
-    background: #ff6b81;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-button:hover {
-    background: #ff4757;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
+/* NOTIFICATIONS */
+.notification {background:#fff; padding:15px 20px; border-left:5px solid #ff6b81; border-radius:8px; margin-bottom:15px; box-shadow:0 6px 15px rgba(0,0,0,0.1); animation:slideIn 0.5s ease;}
+@keyframes slideIn {0%{transform:translateX(-100%);opacity:0;}100%{transform:translateX(0);opacity:1;}}
 
 /* RESPONSIVO */
-@media (max-width: 768px) {
-    aside {
-        width: 70px;
-    }
-    .sidebar a h3 {
-        display: none;
-    }
-    main {
-        margin-left: 70px;
-        width: calc(100% - 70px);
-    }
-}
+@media(max-width:768px){aside{width:70px;}.sidebar a h3{display:none;}main{margin-left:70px;width:calc(100%-70px);padding:20px;}.card-grid{grid-template-columns:1fr;}}
