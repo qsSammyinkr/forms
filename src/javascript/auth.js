@@ -2,69 +2,85 @@
 // Configuração Supabase
 // ----------------------
 const supabaseUrl = 'https://qkbknjelwntrhhvqeuko.supabase.co';
-const supabaseKey = '/3ENqm&4/w+3ph+';
-const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+const supabaseKey = '/3ENqm&4/w+3ph+'; // ⚠️ Coloque sua ANON PUBLIC KEY verdadeira aqui
+const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 // ----------------------
-// Register
+// REGISTER
 // ----------------------
 const registerForm = document.getElementById('registerForm');
-if(registerForm){
-    registerForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const email = registerForm.email.value;
-        const password = registerForm.password.value;
+if (registerForm) {
+  registerForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = registerForm.email.value;
+    const password = registerForm.password.value;
 
-        const { user, error } = await supabase.auth.signUp({ email, password });
-        if(error) alert(error.message);
-        else {
-            alert("User registered! Check your email to confirm.");
-            window.location.href = "index.html";
-        }
+    const { data, error } = await supabaseClient.auth.signUp({
+      email,
+      password,
     });
+
+    if (error) {
+      alert(error.message);
+    } else {
+      alert('✅ Registration successful! Please verify your email.');
+      window.location.href = '/index.html';
+    }
+  });
 }
 
 // ----------------------
-// Login + Remember Me
+// LOGIN + REMEMBER ME
 // ----------------------
 const loginForm = document.getElementById('loginForm');
-if(loginForm){
-    loginForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const email = loginForm.email.value;
-        const password = loginForm.password.value;
+if (loginForm) {
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = loginForm.email.value;
+    const password = loginForm.password.value;
 
-        const { session, error } = await supabase.auth.signIn({ email, password });
-        if(error) alert(error.message);
-        else {
-            alert("Login successful!");
-            window.location.href = "dashboard.html";
-        }
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+      email,
+      password,
     });
+
+    if (error) {
+      alert(error.message);
+    } else {
+      alert('💖 Login successful!');
+      window.location.href = '/dashboard.html';
+    }
+  });
 }
 
 // ----------------------
-// Forgot Password
+// FORGOT PASSWORD
 // ----------------------
 const forgotForm = document.getElementById('forgotForm');
-if(forgotForm){
-    forgotForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const email = forgotForm.email.value;
+if (forgotForm) {
+  forgotForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = forgotForm.email.value;
 
-        const { data, error } = await supabase.auth.api.resetPasswordForEmail(email);
-        if(error) alert(error.message);
-        else alert("Reset link sent to your email!");
+    const { data, error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+      redirectTo: 'https://qkbknjelwntrhhvqeuko.supabase.co/auth/v1/callback', // ou sua página de reset
     });
+
+    if (error) {
+      alert(error.message);
+    } else {
+      alert('📧 Reset link sent! Check your email.');
+    }
+  });
 }
 
 // ----------------------
-// Logout
+// LOGOUT
 // ----------------------
 const logoutBtn = document.getElementById('logoutBtn');
-if(logoutBtn){
-    logoutBtn.addEventListener('click', async () => {
-        await supabase.auth.signOut();
-        window.location.href = "index.html";
-    });
+if (logoutBtn) {
+  logoutBtn.addEventListener('click', async () => {
+    await supabaseClient.auth.signOut();
+    window.location.href = '/index.html';
+  });
 }
