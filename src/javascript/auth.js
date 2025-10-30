@@ -1,64 +1,60 @@
 // ----------------------
-// Configuração Firebase
+// Configuração Supabase
 // ----------------------
-const firebaseConfig = {
-  apiKey: "SUA_API_KEY",
-  authDomain: "SEU_PROJETO.firebaseapp.com",
-  projectId: "SEU_PROJETO",
-  storageBucket: "SEU_PROJETO.appspot.com",
-  messagingSenderId: "SEU_ID",
-  appId: "SEU_APP_ID"
-};
-firebase.initializeApp(firebaseConfig);
+const supabaseUrl = 'SUA_SUPABASE_URL';
+const supabaseKey = 'SUA_ANON_KEY';
+const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
 // ----------------------
-// Função Register
+// Register
 // ----------------------
 const registerForm = document.getElementById('registerForm');
 if(registerForm){
-    registerForm.addEventListener('submit', (e) => {
+    registerForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const email = registerForm.email.value;
         const password = registerForm.password.value;
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then(() => {
-                alert("User registered successfully!");
-                window.location.href = "index.html";
-            })
-            .catch((error) => alert(error.message));
+
+        const { user, error } = await supabase.auth.signUp({ email, password });
+        if(error) alert(error.message);
+        else {
+            alert("User registered! Check your email to confirm.");
+            window.location.href = "index.html";
+        }
     });
 }
 
 // ----------------------
-// Função Login + Remember Me
+// Login + Remember Me
 // ----------------------
 const loginForm = document.getElementById('loginForm');
 if(loginForm){
-    loginForm.addEventListener('submit', (e) => {
+    loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const email = loginForm.email.value;
         const password = loginForm.password.value;
-        const persistence = loginForm.remember.checked 
-            ? firebase.auth.Auth.Persistence.LOCAL 
-            : firebase.auth.Auth.Persistence.SESSION;
-        firebase.auth().setPersistence(persistence)
-            .then(() => firebase.auth().signInWithEmailAndPassword(email, password))
-            .then(() => window.location.href = "dashboard.html")
-            .catch((error) => alert(error.message));
+
+        const { session, error } = await supabase.auth.signIn({ email, password });
+        if(error) alert(error.message);
+        else {
+            alert("Login successful!");
+            window.location.href = "dashboard.html";
+        }
     });
 }
 
 // ----------------------
-// Função Forgot Password
+// Forgot Password
 // ----------------------
 const forgotForm = document.getElementById('forgotForm');
 if(forgotForm){
-    forgotForm.addEventListener('submit', (e) => {
+    forgotForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const email = forgotForm.email.value;
-        firebase.auth().sendPasswordResetEmail(email)
-            .then(() => alert("Reset link sent to your email!"))
-            .catch((error) => alert(error.message));
+
+        const { data, error } = await supabase.auth.api.resetPasswordForEmail(email);
+        if(error) alert(error.message);
+        else alert("Reset link sent to your email!");
     });
 }
 
@@ -67,7 +63,8 @@ if(forgotForm){
 // ----------------------
 const logoutBtn = document.getElementById('logoutBtn');
 if(logoutBtn){
-    logoutBtn.addEventListener('click', () => {
-        firebase.auth().signOut().then(() => window.location.href="index.html");
+    logoutBtn.addEventListener('click', async () => {
+        await supabase.auth.signOut();
+        window.location.href = "index.html";
     });
 }
