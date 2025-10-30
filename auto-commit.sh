@@ -1,4 +1,39 @@
 #!/bin/bash
+# === AUTO COMMIT CONTÍNUO ===
+# Observa alterações e faz commit+push automático
+
+REPO_PATH="/workspaces/forms"
+BRANCH="main"
+LOG_FILE="$REPO_PATH/auto-commit.log"
+
+cd "$REPO_PATH" || exit
+echo "👀 Monitorando alterações em: $REPO_PATH (branch: $BRANCH)"
+echo "📜 Logs em: $LOG_FILE"
+echo "------------------------------------------" >> "$LOG_FILE"
+
+while true; do
+    # Espera mudanças em arquivos (ignora .git)
+    inotifywait -r -e modify,create,delete,move --exclude '\.git/' "$REPO_PATH" >/dev/null 2>&1
+
+    # Quando algo muda:
+    echo "🔧 Alterações detectadas em $(date '+%H:%M:%S')" | tee -a "$LOG_FILE"
+
+    git add .
+
+    # Evita commit vazio
+    if git diff --cached --quiet; then
+        echo "⚠️ Nenhuma modificação para commit." | tee -a "$LOG_FILE"
+        continue
+    fi
+
+    MESSAGE="🪄 Auto commit: $(date '+%Y-%m-%d %H:%M:%S')"
+    git commit -m "$MESSAGE" >> "$LOG_FILE" 2>&1
+    git push origin "$BRANCH" >> "$LOG_FILE" 2>&1
+
+    echo "✅ Commit & push feitos com sucesso em $(date '+%H:%M:%S')" | tee -a "$LOG_FILE"
+    echo "------------------------------------------" >> "$LOG_FILE"
+done
+#!/bin/bash
 # === AUTO COMMIT E PUSH AVANÇADO ===
 # Monitora alterações, faz commit + push automático e exibe notificações coloridas.
 
