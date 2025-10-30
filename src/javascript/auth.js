@@ -2,7 +2,7 @@
 // Configuração Supabase
 // ----------------------
 const supabaseUrl = 'https://qkbknjelwntrhhvqeuko.supabase.co';
-const supabaseKey = 'SUA_ANON_PUBLIC_KEY'; // troque pela real anon key
+const supabaseKey = ''; // troque pela real anon key
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 // ----------------------
