@@ -195,3 +195,9 @@ To https://github.com/qsssSammyinkr/forms
  delete mode 100644 .auto-commit.sh.swp
 Everything up-to-date
 ✅ Auto commit: 2025-10-30 16:36:55 — enviado para o GitHub!
+fatal: cannot lock ref 'HEAD': is at 3c3cdd5cab4ebafa3b43d02b14c6401b27253ab5 but expected fcfbc62ffb62b3b6cd10175d8889872b2ce41c6f
+remote: This repository moved. Please use the new location:        
+remote:   https://github.com/qsSammyinkr/forms.git        
+To https://github.com/qsssSammyinkr/forms
+   fcfbc62..3c3cdd5  main -> main
+✅ Auto commit: 2025-10-30 16:37:21 — enviado para o GitHub!
