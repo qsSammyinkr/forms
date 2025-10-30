@@ -363,12 +363,14 @@ an editor opened by 'git commit'. Please make sure all processes
 are terminated then try again. If it still fails, a git process
 may have crashed in this repository earlier:
 remove the file manually to continue.
---------------------------------------
-🔧 Alterações detectadas em 16:38:18
-fatal: cannot lock ref 'HEAD': is at f1deabb398b0f01702e5afd010a6205bf555fd67 but expected 887a382457b9d440b4e80a52ebcc8f6f353b2227
-remote: This repository moved. Please use the new location:        
-remote:   https://github.com/qsSammyinkr/forms.git        
-To https://github.com/qsssSammyinkr/forms
+fatal: Unable to create '/workspaces/forms/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+thub.com/qsssSammyinkr/forms
    887a382..f1deabb  main -> main
 ✅ Commit & push feitos com sucesso em 16:38:19
 ------------------------------------------
