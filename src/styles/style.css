@@ -9,7 +9,8 @@
 
 body {
     display: flex;
-    justify-cotent: center;
+    justify-content: center;
     align-items: center;
-    min-height: ;
+    min-height: 100vh;
+    background: seagreen;
 }
