@@ -36,22 +36,7 @@ const loginForm = document.getElementById('loginForm');
 if (loginForm) {
   loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const email = loginForm.email.value;
-    const password = loginForm.password.value;
-
-    const { data, error } = await supabaseClient.auth.signInWithPassword({
-      email,
-      password,
-    });
-
-    if (error) {
-      alert(error.message);
-    } else {
-      alert('💖 Login successful!');
-      window.location.href = '/src/admin/dashboard.html';
-    }
-  });
-}
+    
 
 // ----------------------
 // FORGOT PASSWORD
