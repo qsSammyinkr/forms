@@ -19,6 +19,8 @@ body {
     width: 420px;
     background: purple;
     color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
 }
 
 .wrapper h1 {
@@ -106,5 +108,5 @@ body {
 }
 
 .register-link p a:hover {
-    text-de
+    text-decoration: underline;
 }
