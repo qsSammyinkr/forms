@@ -19,7 +19,8 @@ body {
 
 .wrapper {
     width: 420px;
-    background: t;
+    background: transparent;
+    
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
