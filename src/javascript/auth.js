@@ -8,9 +8,12 @@ const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 // ----------------------
 // URLs públicas do Codespace
 // ----------------------
-const INDEX_URL = 'https://sinister-corpse-gx5pqrj6gxwcw6xj-5502.app.github.dev/index.html';
-const DASHBOARD_URL = 'https://sinister-corpse-gx5pqrj6gxwcw6xj-5502.app.github.dev/src/admin/dashboard.html';
-const RESET_URL = 'https://sinister-corpse-
+INDEX_URL → /index.html
+REGISTER_URL → /src/html/register.html
+FORGOT_URL → /src/html/forget_password.html
+RESET_URL → /src/html/reset_password.html
+DASHBOARD_URL → /src/admin/dashboard.html
+
 // ----------------------
 // REGISTER
 // ----------------------
