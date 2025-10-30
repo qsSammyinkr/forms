@@ -2,7 +2,7 @@
 // Configuração Supabase
 // ----------------------
 const supabaseUrl = 'https://qkbknjelwntrhhvqeuko.supabase.co';
-const supabaseKey = '; // ⚠️ Coloque sua ANON PUBLIC KEY verdadeira aqui
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFrYmtuamVsd250cmhodnFldWtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4NDQyMDksImV4cCI6MjA3NzQyMDIwOX0.hiGQJp50YPW4_HnU8w91i2HSzTlk5wUVMlV7uOlWnQw'; // ⚠️ Coloque sua ANON PUBLIC KEY verdadeira aqui
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 // ----------------------
