@@ -50,5 +50,7 @@ body {
 .input-box i {
     position: absolute;
     right: 30px;
-    top
+    top: 50%;
+    transform: translateY(-50%);
+    font
 }
