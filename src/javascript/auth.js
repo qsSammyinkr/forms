@@ -10,8 +10,7 @@ const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 // ----------------------
 const INDEX_URL = 'https://sinister-corpse-gx5pqrj6gxwcw6xj-5502.app.github.dev/index.html';
 const DASHBOARD_URL = 'https://sinister-corpse-gx5pqrj6gxwcw6xj-5502.app.github.dev/src/admin/dashboard.html';
-const RESET_URL = 'https://sinister-corpse-gx5pqrj6gxwcw6xj-5502.app.github.dev/src/html/reset_password.html';
-
+const RESET_URL = 'https://sinister-corpse-
 // ----------------------
 // REGISTER
 // ----------------------
