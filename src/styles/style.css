@@ -58,9 +58,13 @@ body {
     font-size: 20px;
 }
 
-.wrapper .remebmer-forgot {
+.wrapper .remember-forgot {
     display: flex;
     justify-content: space-between;
     font-size: 14.5px;
     margin: -15px 0 15px;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
 }
