@@ -57,3 +57,8 @@ body {
     transform: translateY(-50%);
     font-size: 20px;
 }
+
+.wrapper .remebmer-forgot {
+    display: flex;
+    
+}
