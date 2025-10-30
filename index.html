@@ -3,119 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="src/styles/style.css">
-  <title>Create Account</title>
+  <title>Document</title>
+  <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
 </head>
+
 <body>
-  <main id="form_container">
-    <div id="form_header">
-      <h1 id="form_title">Create Account Admin</h1>
-      <button class="btn-default">
-        <i class="fa-solid fa-right-to-bracket"></i>
-      </button>
-    </div>
 
-    <form id="form">
-      <div id="input_container">
-
-        <!-- First name -->
-        <div class="input-box">
-          <label for="name" class="form-label">First name</label>
-          <div class="input-field">
-            <input type="text" name="name" id="name" class="form-control" placeholder="Name admin">
-            <i class="fa-regular fa-user"></i>
-          </div>
-          <span class="error"></span>
-        </div>
-
-        <!-- Last name -->
-        <div class="input-box">
-          <label for="last_name" class="form-label">Last name</label>
-          <div class="input-field">
-            <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last name admin">
-            <i class="fa-regular fa-user"></i>
-          </div>
-          <span class="error"></span>
-        </div>
-
-        <!-- Birthdate -->
-        <div class="input-box">
-          <label for="birthdate" class="form-label">Birth</label>
-          <div class="input-field">
-            <input type="date" name="birthdate" id="birthdate" class="form-control">
-          </div>
-          <span class="error"></span>
-        </div>
-
-        <!-- Email -->
-        <div class="input-box">
-          <label for="email" class="form-label">E-mail</label>
-          <div class="input-field">
-            <input type="email" name="email" id="email" class="form-control" placeholder="example@gmail.com">
-            <i class="fa-regular fa-envelope"></i>
-          </div>
-          <span class="error"></span>
-        </div>
-
-        <!-- Password -->
-        <div class="input-box">
-          <label for="password" class="form-label">Password</label>
-          <div class="input-field">
-            <input type="password" name="password" id="password" class="form-control" placeholder="********">
-            <i class="fa-regular fa-eye-slash password-icon"></i>
-          </div>
-          <span class="error"></span>
-        </div>
-
-        <!-- Confirm password -->
-        <div class="input-box">
-          <label for="confirm_password" class="form-label">Confirm Password</label>
-          <div class="input-field">
-            <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="********">
-            <i class="fa-regular fa-eye-slash password-icon"></i>
-          </div>
-          <span class="error"></span>
-        </div>
-
-        <!-- Gender -->
-        <div class="radio-container">
-          <label class="form-label">Gender</label>
-          <div class="gender_inputs">
-            <div class="radio-box">
-              <input type="radio" name="gender" id="female" value="female">
-              <label for="female" class="form-label">Female</label>
-            </div>
-            <div class="radio-box">
-              <input type="radio" name="gender" id="male" value="male">
-              <label for="male" class="form-label">Male</label>
-            </div>
-            <div class="radio-box">
-              <input type="radio" name="gender" id="other" value="other">
-              <label for="other" class="form-label">Other</label>
-            </div>
-          </div>
-          <span class="error"></span>
-        </div>
-
+  <div class="wrapper">
+    <form action="">
+      <h1>Login</h1>
+      <div class="input-box">
+        <input type="text" placeholder="Username" required>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Password" required>
       </div>
 
-      <button type="submit" class="btn-default">
-        <i class="fa-solid fa-check"></i>
-        Create account admin
-      </button>
-    </form>
-  </main>
+      <div class="remember-forgot">
+        <label><input type="checkbox"> Remember me</label>
+        <a href="#">Forgot password? <a href="#">Register</a></a>
+      </div>
 
-  <script src="src/javascript/script.js" defer></script>
-  <!-- Success Modal -->
-<div id="successModal" class="modal">
-  <div class="modal-content">
-    <i class="fa-solid fa-circle-check"></i>
-    <h2>Account created successfully!</h2>
-    <p>Redirecting you to the admin dashboard...</p>
+      <button type="submit" class="btn">Login</button>
+
+      <div class="register-link">
+        <p>Don't have an account?</p>
+      </div>
+    </form>
   </div>
-</div>
 
 </body>
+
 </html>
