@@ -1,0 +1,48 @@
+# ===========================================
+# 🧠 GITIGNORE — forms dashboard project
+# ===========================================
+
+# Logs
+auto-commit.log
+*.log
+
+# Sistema / IDE / temporários
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.tmp
+
+# Node (se usar npm no futuro)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ambiente e credenciais
+.env
+.env.local
+.env.*.local
+
+# Arquivos do sistema Git que não devem subir
+.git/hooks/
+.git/config
+
+# Builds e cache
+dist/
+build/
+.cache/
+__pycache__/
+*.pyc
+
+# Backups
+*.bak
+*.old
+*.orig
+*.save
+
+# Imagens temporárias
+*.psd
+*.xcf
+*.tmp.png
