@@ -1,7 +1,7 @@
 // ----------------------
 // Configuração Supabase
 // ----------------------
-const supabaseUrl = 'SUA_SUPABASE_URL';
+const supabaseUrl = 'https://qkbknjelwntrhhvqeuko.supabase.co';
 const supabaseKey = '/3ENqm&4/w+3ph+';
 const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
