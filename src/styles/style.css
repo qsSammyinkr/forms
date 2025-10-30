@@ -18,5 +18,11 @@ body {
 .wrapper {
     width: 420px;
     background: purple;
-    color: ;
+    color: #fff;
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+    
 }
