@@ -201,3 +201,17 @@ remote:   https://github.com/qsSammyinkr/forms.git
 To https://github.com/qsssSammyinkr/forms
    fcfbc62..3c3cdd5  main -> main
 ✅ Auto commit: 2025-10-30 16:37:21 — enviado para o GitHub!
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+No changes to commit
+remote: This repository moved. Please use the new location:        
+remote:   https://github.com/qsSammyinkr/forms.git        
+To https://github.com/qsssSammyinkr/forms
+   3c3cdd5..242ab2e  main -> main
+[main 242ab2e] Auto commit: 2025-10-30 16:37:25
+ Author: qsssSammyinkr <hafbdjjt@gmail.com>
+ 2 files changed, 17 insertions(+), 3 deletions(-)
+Everything up-to-date
