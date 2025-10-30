@@ -41,6 +41,8 @@ body {
     outline: none;
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
 }
 
 .input-box input::placeholder {
@@ -52,5 +54,5 @@ body {
     right: 30px;
     top: 50%;
     transform: translateY(-50%);
-    font
+    font-size: 20px;
 }
