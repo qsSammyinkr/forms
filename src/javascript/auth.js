@@ -13,7 +13,6 @@ REGISTER_URL → /src/html/register.html
 FORGOT_URL → /src/html/forget_password.html
 RESET_URL → /src/html/reset_password.html
 DASHBOARD_URL → /src/admin/dashboard.html
-
 // ----------------------
 // REGISTER
 // ----------------------
