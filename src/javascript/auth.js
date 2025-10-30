@@ -34,9 +34,41 @@ if (registerForm) {
 // ----------------------
 const loginForm = document.getElementById('loginForm');
 if (loginForm) {
+
+  // Preencher email automaticamente se estiver salvo
+  const savedEmail = localStorage.getItem('rememberedEmail');
+  if (savedEmail) {
+    loginForm.email.value = savedEmail;
+    if (loginForm.remember) loginForm.remember.checked = true;
+  }
+
   loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+    const email = loginForm.email.value;
+    const password = loginForm.password.value;
+    const remember = loginForm.remember ? loginForm.remember.checked : false;
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) {
+      alert(error.message);
+    } else {
+      // Salvar ou remover o email no localStorage
+      if (remember) {
+        localStorage.setItem('rememberedEmail', email);
+      } else {
+        localStorage.removeItem('rememberedEmail');
+      }
+
+      alert('💖 Login successful!');
+      window.location.href = '/src/admin/dashboard.html';
+    }
+  });
+}
+
 
 // ----------------------
 // FORGOT PASSWORD
