@@ -48,7 +48,7 @@ if (loginForm) {
       alert(error.message);
     } else {
       alert('💖 Login successful!');
-      window.location.href = 'src/admin/d';
+      window.location.href = 'src/admin/dashboard.html';
     }
   });
 }
