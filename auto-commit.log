@@ -237,3 +237,14 @@ an editor opened by 'git commit'. Please make sure all processes
 are terminated then try again. If it still fails, a git process
 may have crashed in this repository earlier:
 remove the file manually to continue.
+fatal: cannot lock ref 'HEAD': is at 0657fa9601c88e9da647ce2236fbfd1c81db0a99 but expected fc3cd4c74d198e0738660e4cce65c9e886475205
+remote: This repository moved. Please use the new location:        
+remote:   https://github.com/qsSammyinkr/forms.git        
+To https://github.com/qsssSammyinkr/forms
+ ! [remote rejected] main -> main (cannot lock ref 'refs/heads/main': is at 0657fa9601c88e9da647ce2236fbfd1c81db0a99 but expected fc3cd4c74d198e0738660e4cce65c9e886475205)
+error: failed to push some refs to 'https://github.com/qsssSammyinkr/forms'
+✅ Auto commit: 2025-10-30 16:37:59 — enviado para o GitHub!
+ailed to push some refs to 'https://github.com/qsssSammyinkr/forms'
+✅ Commit & push feitos com sucesso em 16:38:00
+------------------------------------------
+🔧 Alterações detectadas em 16:38:00
